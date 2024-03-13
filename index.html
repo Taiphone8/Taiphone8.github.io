@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wowza</title>
     <link rel="stylesheet" href="css/style.css">
+    <link id="lightSheet" rel="stylesheet" href="css/style.css">
+    <link id="darkSheet" rel="stylesheet" media="none" href="css/dark.css">
 </head>
+
 <body>
     <div id="content">
-        <h1>Welcome to my website</h1>
-        <p>Click the image below to play my game</p>
-        <a href="Get To School 5/index.html">
-            <img src="img/Friedas_Brown_Coconuts.webp" alt="Coconut">
 
-        </a>
+        <div id="banner">
+            <h1>My website</h1>
+            <a href="about.html">About Me</a> |
+            <a href="gameguide.html">Get To School</a>
+            <a href="#" onclick="changeSheet()">Change Mode</a>
+        </div>
+
+        <div id="blogposts">
+            <div class="post">
+                <h2>About Me</h2>
+                <p>I am Taivon pronounced tie von. I came to votech my sophmore year and am enrolled in IT courses. I was born in York, PA and have been here my whole life. </p>
+            </div>
+            <div id="Gallery">
+            <div class="post">
+                <h2 style="display: block;">Get To School</h2>
+                <img src="img/GamePic.png" alt="Game loading screen">
+                <p>My game only has a few completley finished areas. For not playing a lot of RPG games I think I did a pretty decent job. The best part of my game is definitely the decorations. The game starts off with just you but you can make friends along the way. You have access to cool abilities you can find around the map with exploring you just have to be adventorous.</p>
+            </div>
+        </div>
+        </div>
     </div>
+
 </body>
+
+<script>
+    var lightMode = true;
+
+    function changeSheet() {
+        // make lightmode not equal lightmode
+        lightMode = !lightMode;
+        var lightSheet = document.getElementById("lightSheet")
+        var darkSheet = document.getElementById("darkSheet")
+        //if lightMode turned off, display dark stylesheet
+        if (lightMode == false) {
+            console.log("Turning dark mode on...");
+            darkSheet.media = " ";
+            lightSheet.media = "none";
+        } else {
+            console.log("Turning light mode on...");
+            darkSheet.media = "none";
+            lightSheet.media = " ";
+        }
+    }
+
+
+</script>
+
 </html>
