@@ -56,3 +56,7 @@ background-color: gray;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+a{
+    color: blue;
+    background-color: white;
+ }
