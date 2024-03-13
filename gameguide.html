@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wowza</title>
     <link rel="stylesheet" href="css/style.css">
+    <link id="lightSheet" rel="stylesheet" href="css/style.css">
+    <link id="darkSheet" rel="stylesheet" media="none" href="css/dark.css">
 </head>
 
 <body>
@@ -14,7 +16,8 @@
         <div id="banner">
             <h1>My website</h1>
             <a href="about.html">About Me</a> |
-            <a href="index.html">Home Page</a>
+            <a href="index.html">Home Page</a> |
+            <a href="#" onclick="changeSheet()">Change Mode</a>
         </div>
             <div class="banner">
                 <div id="blogposts">
@@ -39,5 +42,26 @@
 
     </div>
 </body>
+<script>
+    var lightMode = true;
 
+    function changeSheet() {
+        // make lightmode not equal lightmode
+        lightMode = !lightMode;
+        var lightSheet = document.getElementById("lightSheet")
+        var darkSheet = document.getElementById("darkSheet")
+        //if lightMode turned off, display dark stylesheet
+        if (lightMode == false) {
+            console.log("Turning dark mode on...");
+            darkSheet.media = " ";
+            lightSheet.media = "none";
+        } else {
+            console.log("Turning light mode on...");
+            darkSheet.media = "none";
+            lightSheet.media = " ";
+        }
+    }
+
+
+</script>
 </html>
